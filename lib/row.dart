@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MyZekr extends StatelessWidget {
-  MyZekr(
-      {super.key,
-      required this.onPressed,
-      this.data,
-      required this.title,
-      // required this.image
-      });
+  MyZekr({
+    super.key,
+    required this.onPressed,
+    this.data,
+    required this.title,
+    // required this.image
+  });
   int? data;
   final String title;
   // add image
@@ -25,8 +23,7 @@ class MyZekr extends StatelessWidget {
           color: Colors.amber[300],
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            
-            Container(
+            SizedBox(
               width: 100,
               child: Text(
                 title,
@@ -37,7 +34,7 @@ class MyZekr extends StatelessWidget {
             ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                primary: Colors.amber[500],
+                backgroundColor: Colors.amber[500],
               ),
               child: const Icon(
                 Icons.arrow_circle_up,

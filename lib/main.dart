@@ -35,6 +35,13 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter2 = 0;
   int _counter3 = 0;
   int _counter4 = 0;
+  List<String> images = [
+    'assets/images/hamd.jpg',
+    'assets/images/Muhammad.jpg',
+    'assets/images/Subhan-Allah.jpg',
+    'assets/images/takbeer.jpg'
+  ];
+  int index = 0;
 
   void _incrementCounter1() {
     setState(() {
@@ -60,12 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void changeImage() {
+    setState(() {
+      index = (index + 1) % images.length;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('تطبيق الأذكار',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black)),
         // color of the app bar text
 
         centerTitle: true,
@@ -75,7 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-   
             //   decoration: const BoxDecoration(
             //     // color: Colors.orangeAccent,
             //     image: DecorationImage(
@@ -85,9 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
             //     ),
             //   ),
             // ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.35,
-              child: Image(image: AssetImage("assets/images/takbeer.jpg"), fit: BoxFit.cover,)),
+            InkWell(
+              onTap: changeImage,
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  child:  Image(
+                    image: AssetImage(images[index]),
+                    fit: BoxFit.cover,
+                  )),
+            ),
 
             MyZekr(
               title: 'سبحان الله',
@@ -118,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // center poisitioned floating action button
         mini: true,
         onPressed: reset,
-        tooltip: 'Increment',
+        tooltip: 'صفر العداد',
         child: const Icon(Icons.refresh),
       ),
     );
