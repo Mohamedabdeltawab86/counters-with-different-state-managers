@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MyZekr extends StatelessWidget {
   MyZekr({
     super.key,
@@ -20,7 +21,9 @@ class MyZekr extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         height: MediaQuery.of(context).size.height * 0.12,
         child: Card(
-          color: Colors.amber[300],
+          elevation: 8,
+          shadowColor: Colors.black,
+          color: Colors.amber[200],
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             SizedBox(
@@ -34,16 +37,20 @@ class MyZekr extends StatelessWidget {
             ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber[500],
+                backgroundColor: Colors.amber[300],
               ),
               child: const Icon(
                 Icons.arrow_circle_up,
                 color: Colors.white,
+                size: 50,
               ),
             ),
-            Text(
-              data.toString(),
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            SizedBox(
+              width: 40,
+              child: Text(
+                data.toString(),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
             ),
           ]),
         ));
