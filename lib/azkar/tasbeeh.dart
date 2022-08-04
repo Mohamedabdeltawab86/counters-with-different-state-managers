@@ -12,7 +12,7 @@ class Motlak extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: const AzkarMotalka(),
     );
@@ -33,7 +33,6 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
 
   // Fetch content from the json file
   Future<void> readJson() async {
-
     final String response =
         await rootBundle.loadString('assets/JsonConfig/azkar.json');
     final Map<String, dynamic> map = await json.decode(response);
@@ -66,11 +65,27 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
                       itemCount: _items.length,
                       itemBuilder: (context, index) {
                         return Card(
+                          elevation: 3,
+                          color: Colors.grey[200],
                           margin: const EdgeInsets.all(10),
                           child: ListTile(
-                            leading: Text(_items[index]["category"]),
-                            title: Text(_items[index]["zekr"]),
-                            subtitle: Text(_items[index]["description"]),
+                            leading: Text(_items[index]["category"],
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Tajawal'),
+                                textAlign: TextAlign.center),
+                            title: Text(
+                              _items[index]["zekr"],
+                              style: const TextStyle(
+                                  fontFamily: 'Tajawal',
+                                  fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                            subtitle: Text(
+                              _items[index]["description"],
+                              style: const TextStyle(fontFamily: 'Tajawal'),
+                              textAlign: TextAlign.center,
+                            ),
                             trailing: Text(_items[index]["count"]),
                           ),
                         );
