@@ -14,7 +14,7 @@ class Motlak extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AzkarMotalka(),
+      home: const AzkarMotalka(),
     );
   }
 }
@@ -27,16 +27,20 @@ class AzkarMotalka extends StatefulWidget {
 }
 
 class _AzkarMotalkaState extends State<AzkarMotalka> {
-  List _items = [];
+  // Map<String, dynamic> map = Map();
+  List<dynamic> _items = [];
+  int index = 0;
 
   // Fetch content from the json file
   Future<void> readJson() async {
+
     final String response =
         await rootBundle.loadString('assets/JsonConfig/azkar.json');
-    final data = await json.decode(response);
+    final Map<String, dynamic> map = await json.decode(response);
     setState(() {
-      _items = data;
+      _items = map['items'];
     });
+    print(_items[0]);
   }
 
   @override
@@ -57,7 +61,6 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
 
             // Display the data loaded from sample.json
             _items.isNotEmpty
-                 
                 ? Expanded(
                     child: ListView.builder(
                       itemCount: _items.length,

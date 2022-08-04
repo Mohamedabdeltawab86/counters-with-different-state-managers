@@ -182,36 +182,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-<<<<<<< HEAD
    
              
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.35,
-              child: const Image(image: AssetImage("assets/images/takbeer.jpg"), fit: BoxFit.cover,)),
-=======
-            InkWell(
-              onTap: changeImage,
-              // add toast on long press
-              onLongPress: () {
-                changeZekr;
-                Fluttertoast.showToast(
-                    msg: azkar[azkarIndex],
-                    toastLength: Toast.LENGTH_LONG,
-                    gravity: ToastGravity.BOTTOM,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.amber[300],
-                    textColor: Colors.black,
-                    fontSize: 20.0);
-              },
->>>>>>> a6f271bbd3f862c8b69e2790c1ea92c38af246d0
-
-              child: SizedBox(
+  
+ SizedBox(
                   height: MediaQuery.of(context).size.height * 0.35,
                   child: Image(
                     image: AssetImage(images[imageIndex]),
                     fit: BoxFit.cover,
                   )),
-            ),
+            
             MyZekr(
               title: 'سبحان الله',
               onPressed: _incrementCounter1,
