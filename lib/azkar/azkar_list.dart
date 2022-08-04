@@ -16,8 +16,7 @@ class AllZekr extends StatefulWidget {
 }
 
 class _AllZekrState extends State<AllZekr> {
-
-    List<dynamic> _items = [];
+  List<dynamic> _items = [];
   int index = 0;
 
   // Fetch content from the json file
@@ -30,26 +29,34 @@ class _AllZekrState extends State<AllZekr> {
     });
     // print(_items[0]);
   }
+
   // initialize the state of the app
   @override
   void initState() {
     readJson();
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-
-    final List uniqueItems = _items.map((dynamic item) => item['category']).toSet().toList();
+    final List uniqueItems =
+        _items.map((dynamic item) => item['category']).toSet().toList();
+        print(uniqueItems.length);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('قائمة الأذكار'),
+      ),
       body: ListView.builder(
         itemCount: uniqueItems.length,
-        itemBuilder: (context, index) => Card(
-          child: ListTile(
-            title: Text(uniqueItems[index]),
-            
-          
+        itemBuilder: (context, index) => InkWell(
+          onTap: () {},
+          child: Card(
+            color: Colors.amber[200],
+            elevation: 3,
+            child: ListTile(
+              title: Text(uniqueItems[index]),
+            ),
           ),
         ),
       ),

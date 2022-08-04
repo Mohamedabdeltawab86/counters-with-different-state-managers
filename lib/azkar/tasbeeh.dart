@@ -53,10 +53,10 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
-            // ElevatedButton(
-            //   child: const Text('Load Data'),
-            //   onPressed: readJson,
-            // ),
+            ElevatedButton(
+              child: const Text('Load Data'),
+              onPressed: readJson,
+            ),
 
             // Display the data loaded from sample.json
             _items.isNotEmpty
@@ -87,7 +87,7 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
                               style: const TextStyle(fontFamily: 'Tajawal'),
                               textAlign: TextAlign.center,
                             ),
-                            trailing: Text(_items[index]["count"]),
+                            trailing: CircleAvatar(child: Text(_items[index]["count"])),
                           ),
                         );
                       },
