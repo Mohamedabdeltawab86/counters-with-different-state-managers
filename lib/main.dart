@@ -36,6 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter3 = 0;
   int _counter4 = 0;
 
+
+
   void _incrementCounter1() {
     setState(() {
       _counter1++;
@@ -76,22 +78,15 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
    
-            //   decoration: const BoxDecoration(
-            //     // color: Colors.orangeAccent,
-            //     image: DecorationImage(
-            //       image: AssetImage("assets/images/stellarium-005.png"),
-            //       fit: BoxFit.cover,
-            //       alignment: Alignment.topCenter,
-            //     ),
-            //   ),
-            // ),
-            Container(
+             
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.35,
-              child: Image(image: AssetImage("assets/images/takbeer.jpg"), fit: BoxFit.cover,)),
+              child: const Image(image: AssetImage("assets/images/takbeer.jpg"), fit: BoxFit.cover,)),
 
             MyZekr(
               title: 'سبحان الله',
               onPressed: _incrementCounter1,
+              // onPressed: _incrementCounter(1),
               data: _counter1,
               // image: 'assets/images/hamd.jpg',
             ),

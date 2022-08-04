@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class MyZekr extends StatelessWidget {
   MyZekr(
@@ -10,6 +9,9 @@ class MyZekr extends StatelessWidget {
       required this.title,
       // required this.image
       });
+
+      // define onPressed taking different counters to be passed as an argument
+      
   int? data;
   final String title;
   // add image
