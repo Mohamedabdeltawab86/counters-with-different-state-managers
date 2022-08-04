@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'azkar/azkar_list.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -150,12 +152,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MyZekr(
-                      title: 'أذكار المساء',
-                      data: _counter2,
-                      onPressed: _incrementCounter2,
+                   builder: (context) => AllZekr(),
                     ),
-                  ),
+                  
                 );
               },
             ),

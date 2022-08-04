@@ -39,12 +39,12 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
     setState(() {
       _items = map['items'];
     });
-    print(_items[0]);
+    // print(_items[0]);
   }
 
   @override
   Widget build(BuildContext context) {
-    print('_items: $_items');
+    // print('_items: $_items');
     return Scaffold(
       appBar: AppBar(
         title: Text('الأذكار المطلقة'),
@@ -53,10 +53,10 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
-            ElevatedButton(
-              child: const Text('Load Data'),
-              onPressed: readJson,
-            ),
+            // ElevatedButton(
+            //   child: const Text('Load Data'),
+            //   onPressed: readJson,
+            // ),
 
             // Display the data loaded from sample.json
             _items.isNotEmpty
@@ -77,6 +77,7 @@ class _AzkarMotalkaState extends State<AzkarMotalka> {
                             title: Text(
                               _items[index]["zekr"],
                               style: const TextStyle(
+                                fontSize: 15,
                                   fontFamily: 'Tajawal',
                                   fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
