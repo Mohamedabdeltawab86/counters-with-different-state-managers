@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6f271bbd3f862c8b69e2790c1ea92c38af246d0
 
+// ignore: must_be_immutable
 class MyZekr extends StatelessWidget {
+<<<<<<< HEAD
   MyZekr(
       {super.key,
       required this.onPressed,
@@ -12,6 +17,15 @@ class MyZekr extends StatelessWidget {
 
       // define onPressed taking different counters to be passed as an argument
       
+=======
+  MyZekr({
+    super.key,
+    required this.onPressed,
+    this.data,
+    required this.title,
+    // required this.image
+  });
+>>>>>>> a6f271bbd3f862c8b69e2790c1ea92c38af246d0
   int? data;
   final String title;
   // add image
@@ -24,11 +38,12 @@ class MyZekr extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         height: MediaQuery.of(context).size.height * 0.12,
         child: Card(
-          color: Colors.amber[300],
+          elevation: 8,
+          shadowColor: Colors.black,
+          color: Colors.amber[200],
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            
-            Container(
+            SizedBox(
               width: 100,
               child: Text(
                 title,
@@ -39,16 +54,20 @@ class MyZekr extends StatelessWidget {
             ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                primary: Colors.amber[500],
+                backgroundColor: Colors.amber[300],
               ),
               child: const Icon(
                 Icons.arrow_circle_up,
                 color: Colors.white,
+                size: 50,
               ),
             ),
-            Text(
-              data.toString(),
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            SizedBox(
+              width: 40,
+              child: Text(
+                data.toString(),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
             ),
           ]),
         ));
